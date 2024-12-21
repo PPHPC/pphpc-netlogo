@@ -620,11 +620,13 @@ http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
 
 ### For the original model
 
-Copyright 1997 Uri Wilensky. All rights reserved.
+Copyright 1997 Uri Wilensky.
 
-Permission to use, modify or redistribute this model is hereby granted, provided that both of the following requirements are followed:  
-a) this copyright notice is included.  
-b) this model will not be redistributed for profit without permission from Uri Wilensky. Contact Uri Wilensky for appropriate licenses for redistribution for profit.
+![CC BY-NC-SA 3.0](http://ccl.northwestern.edu/images/creativecommons/byncsa.png)
+
+This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.  To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
+
+Commercial licenses are also available. To inquire about commercial licenses, please contact Uri Wilensky at uri@northwestern.edu.
 @#$#@#$#@
 default
 true
