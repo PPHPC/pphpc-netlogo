@@ -18,19 +18,19 @@ patches-own [countdown] ;; patches have a countdown variable for grass
 to setup
 
   clear-all
-  
+
   ;; Set random number generator seed
   random-seed rngseed
-  
+
   ;; show-params
 
-  ask patches [ 
+  ask patches [
     ifelse random 2 = 1 [
       set countdown 1 + random grass-regrowth-time ;; initialize grass grow clocks randomly
       set pcolor brown
     ] [
       set countdown 0
-      set pcolor green 
+      set pcolor green
     ]
   ]
 
@@ -68,17 +68,17 @@ to go
     set energy energy - 1
     if energy < 1 [ die ] ;; if energy dips below zero, die
   ]
-  
+
   ;; 2 - Grow food
   ask patches [ grow-grass ]
-  
+
   ;; 3 - Act
   ask turtles [
     ifelse is-a-sheep? self [
       ;; is a sheep
       eat-grass
       reproduce sheep-reprod-thres sheep-reprod-prob
-    ] [ 
+    ] [
       ;; is a wolf
       catch-sheep
       reproduce wolf-reprod-thres wolf-reprod-prob
@@ -88,13 +88,13 @@ to go
   ;; 4 - Gather stats
   gather-stats
   display-labels
-  
+
   ;; New iteration
   tick
-  
+
   ;; Time to stop?
   if ticks = iterations [ stop ]
-  
+
 end
 
 to gather-stats
@@ -136,7 +136,7 @@ to reproduce [ reprod-thres reprod-prob ] ;; turtle procedure
       let energy_offspring int (energy / 2)
       set energy energy - energy_offspring    ;; divide energy between parent and offspring
       hatch 1 [ ;; hatch an offspring which stays in the same place
-        set energy energy_offspring  ] 
+        set energy energy_offspring  ]
     ]
   ]
 end
@@ -187,8 +187,8 @@ end
 GRAPHICS-WINDOW
 646
 10
-1056
-441
+1054
+419
 -1
 -1
 4.0
@@ -220,7 +220,7 @@ sheep-gain-from-food
 sheep-gain-from-food
 0.0
 50.0
-4
+4.0
 1.0
 1
 NIL
@@ -235,7 +235,7 @@ sheep-reprod-prob
 sheep-reprod-prob
 0
 20.0
-4
+4.0
 1.0
 1
 %
@@ -250,7 +250,7 @@ wolf-gain-from-food
 wolf-gain-from-food
 0.0
 100.0
-20
+20.0
 1.0
 1
 NIL
@@ -265,7 +265,7 @@ wolf-reprod-prob
 wolf-reprod-prob
 0.0
 20.0
-5
+5.0
 1.0
 1
 %
@@ -280,7 +280,7 @@ grass-regrowth-time
 grass-regrowth-time
 0
 100
-10
+10.0
 1
 1
 NIL
@@ -410,7 +410,7 @@ SWITCH
 91
 show-energy?
 show-energy?
-1
+0
 1
 -1000
 
@@ -420,7 +420,7 @@ INPUTBOX
 101
 378
 sheep-reprod-thres
-2
+2.0
 1
 0
 Number
@@ -431,7 +431,7 @@ INPUTBOX
 196
 378
 wolf-reprod-thres
-2
+2.0
 1
 0
 Number
@@ -442,7 +442,7 @@ INPUTBOX
 101
 246
 initial-number-sheep
-400
+400.0
 1
 0
 Number
@@ -453,7 +453,7 @@ INPUTBOX
 196
 246
 initial-number-wolves
-200
+200.0
 1
 0
 Number
@@ -464,7 +464,7 @@ INPUTBOX
 153
 169
 iterations
-4001
+4001.0
 1
 0
 Number
@@ -485,7 +485,7 @@ BUTTON
 158
 412
 Reset
-set iterations 2000\nset show-energy? false\nset grass-regrowth-time 10\nset initial-number-sheep 400\nset sheep-gain-from-food 4\nset sheep-reprod-prob 4\nset sheep-reprod-thres 2\nset initial-number-wolves 200\nset wolf-gain-from-food 20\nset wolf-reprod-prob 5\nset wolf-reprod-thres 2\nset rngseed new-seed\n
+set iterations 2000\nset show-energy? false\nset grass-regrowth-time 10\nset initial-number-sheep 400\nset sheep-gain-from-food 4\nset sheep-reprod-prob 4\nset sheep-reprod-thres 2\nset initial-number-wolves 200\nset wolf-gain-from-food 20\nset wolf-reprod-prob 5\nset wolf-reprod-thres 2\nset rngseed new-seed
 NIL
 1
 T
@@ -582,7 +582,7 @@ INPUTBOX
 101
 440
 rngseed
-1784790635
+1.784790635E9
 1
 0
 Number
@@ -934,9 +934,8 @@ false
 0
 Polygon -7500403 true true 270 75 225 30 30 225 75 270
 Polygon -7500403 true true 30 75 75 30 270 225 225 270
-
 @#$#@#$#@
-NetLogo 5.1.0
+NetLogo 6.4.0
 @#$#@#$#@
 setup
 set grass? true
@@ -1507,7 +1506,6 @@ true
 0
 Line -7500403 true 150 150 90 180
 Line -7500403 true 150 150 210 180
-
 @#$#@#$#@
 0
 @#$#@#$#@
